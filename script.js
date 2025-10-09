@@ -50,7 +50,7 @@ function operate(operator, firstNum, secondNum) {
     let results;
     if (operator == "+") {
         results = add(firstNum, secondNum)
-        
+
     } else if (operator == "-") {
         results = subtract(firstNum, secondNum)
     } else if (operator == "x") {
@@ -132,11 +132,6 @@ function updateDisplay(fullEquation) {
 }
 
 // Event Listeners
-
-
-
-
-
 document.addEventListener("keydown", (event) => {
     keyDownFunction(event);
 })
@@ -173,7 +168,6 @@ function keyDownFunction(event) {
     }
 
     if (!keyPressList.includes(pressedKey)) {
-
         return 0
     }
 
@@ -217,8 +211,6 @@ function buttonClickListener(button) {
 }
 
 
-
-
 function finishEquationCheck(character) {
     if (finishEquation === true) {
         if (mathOperatorList.includes(character)) {
@@ -241,12 +233,12 @@ function backspaceFunction() {
         finishEquation = false
     } else {
         if (operator != 0 && fullEquationString.slice(-1) != " ") {
-            secondNumber = secondNumber.slice(0,-1)
+            secondNumber = secondNumber.slice(0, -1)
         } else if (operator == 0) {
-            firstNumber = firstNumber.slice(0,-1)
+            firstNumber = firstNumber.slice(0, -1)
         } else {
             operator = ""
-            fullEquationString = fullEquationString.slice(0,-2)
+            fullEquationString = fullEquationString.slice(0, -2)
         }
         fullEquationString = fullEquationString.slice(0, -1)
         console.log(fullEquationString)
@@ -255,3 +247,4 @@ function backspaceFunction() {
 }
 
 // Change backspace formatting: FEQ should be combined 3 variables, backspace should remove based on variable presence.
+// Things like conditions I can also store it in functions/variables
